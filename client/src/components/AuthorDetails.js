@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import HomePage from './HomePage';
-
 
 export default class AuthorDetails extends Component{
   constructor(props){
@@ -28,42 +26,21 @@ export default class AuthorDetails extends Component{
 
   }
 
-  // authorInfo(){
-  //   const num = parseInt(this.props.match.params.author)
-  //   this.setState({
-  //     author: num
-  //   })
-  //   // debugger;
-  // }
-
-  // quoteArray(){
-  //   let quotesFull = this.state.quotes.map(function(quote){
-  //
-  //     return (
-  //     <div>
-  //       quote.contents
-  //     </div>
-  //
-  //     )
-  //   })
-  // }
-
   render(){
 
     if( !this.state.quotes ){
       return <em>Loading...</em>;
     }
-    // this.authorInfo();
-    // debugger;
 
-    const quotes = this.state.quotes.map(quote =>  <div>{quote.contents}</div>)
-
+    const quotes = this.state.quotes.map(quote =>  <div className='quotes'>{quote.contents}</div>)
 
     return(
       <div>
-      {this.state.authorName}
-      {quotes}
-      <Link to='/'>back</Link>
+        <h1>{this.state.authorName}</h1>
+        <div className='container'>
+            {quotes}
+        </div>
+        <Link to='/'>back</Link>
     </div>
     )
   }

@@ -76,11 +76,11 @@ export default class Quotes extends Component{
     // debugger;
     return(
       <div>
-        {/* <div>{this.setQuote()}</div> */}
-        {quote[0]}
+        <div className="container">
+          <div className="quotes">{quote[0]}</div>
+        </div>
         <div><Author authorName={author}/></div>
         <a href="#" onClick={setQuote}>Next</a>
-
       </div>
     )
 

@@ -32,9 +32,7 @@ export default class Author extends Component{
 
     return (
       <Link to={authorURL}>
-        <div>
           {authorName}
-        </div>
       </Link>
     )
   }
