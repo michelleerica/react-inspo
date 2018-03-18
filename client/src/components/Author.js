@@ -16,7 +16,8 @@ export default class Author extends Component{
     // debugger;
     const url = `/authors/${this.props.authorName}`
     axios.get(url)
-    .then( results => this.setState({fullName: results.data.name}) )
+    .then( results => this.setState(
+      {fullName: results.data.name}) )
     // debugger;
   }
 
@@ -26,7 +27,15 @@ export default class Author extends Component{
     if( !this.state.fullName ){
       return <em>Loading...</em>;
     }
+    const authorName = this.state.fullName;
+    const authorURL = `/author/${this.state.author}`
 
-    return <div>{this.state.fullName}</div>
+    return (
+      <Link to={authorURL}>
+        <div>
+          {authorName}
+        </div>
+      </Link>
+    )
   }
 } // export

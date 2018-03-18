@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import axios from 'axios';
 import Author from './Author'
 
@@ -46,19 +46,19 @@ export default class Quotes extends Component{
 
     const quote = this.quoteArray()
     const author = quote[1]
-    const authorURL = `/author/${author}`
-
+    // const authorURL = `/author/${author}`
+    //
+    // const location = {
+    //   pathname: authorURL,
+    //   state: { authorName: 'strings' }
+    // }
+    // debugger;
     return(
       <div>
-
         <div>{quote[0]}</div>
-        <Link to= {
-          {
-            pathname: authorURL
-          }
-          }>
+        {/* <Link to= {location}> */}
           <div><Author authorName={author}/></div>
-        </Link>
+        {/* </Link> */}
 
 
       </div>
