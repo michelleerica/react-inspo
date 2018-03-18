@@ -10,6 +10,9 @@ export default class Quotes extends Component{
     this.state = {
       quotes: null
     }
+    this.quoteArray = this.quoteArray.bind( this );
+    // this.setQuote = this.setQuote.bind( this );
+
   }
 
   componentDidMount() {
@@ -37,15 +40,33 @@ export default class Quotes extends Component{
     return quotesFull[index]
   }
 
+  // setQuote(){
+  //   let quote = this.quoteArray()
+  //   let author = quote[1]
+  //   console.log('set quote ran');
+  //   return <div>{quote[0]}</div>
+  //
+  // }
+
 
   render(){
     if( !this.state.quotes ){
       return <em>Loading...</em>;
     }
 
-
+    //
     const quote = this.quoteArray()
     const author = quote[1]
+
+    //not working TODO
+    const setQuote = () => {
+      // debugger;
+      let quote = this.quoteArray()
+      let author = quote[1]
+      console.log('set quote ran');
+      return <li>TEST</li>
+
+    }
     // const authorURL = `/author/${author}`
     //
     // const location = {
@@ -55,11 +76,10 @@ export default class Quotes extends Component{
     // debugger;
     return(
       <div>
-        <div>{quote[0]}</div>
-        {/* <Link to= {location}> */}
-          <div><Author authorName={author}/></div>
-        {/* </Link> */}
-
+        {/* <div>{this.setQuote()}</div> */}
+        {quote[0]}
+        <div><Author authorName={author}/></div>
+        <a href="#" onClick={setQuote}>Next</a>
 
       </div>
     )

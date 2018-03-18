@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import HomePage from './HomePage';
+
 
 export default class AuthorDetails extends Component{
   constructor(props){
@@ -52,15 +54,16 @@ export default class AuthorDetails extends Component{
       return <em>Loading...</em>;
     }
     // this.authorInfo();
-    debugger;
+    // debugger;
 
     const quotes = this.state.quotes.map(quote =>  <div>{quote.contents}</div>)
 
 
     return(
-      <div>{this.state.author}
+      <div>
       {this.state.authorName}
       {quotes}
+      <Link to='/'>back</Link>
     </div>
     )
   }
